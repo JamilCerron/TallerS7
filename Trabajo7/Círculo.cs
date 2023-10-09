@@ -17,7 +17,7 @@ namespace Trabajo7
         }
 
 
-        public float ÁreaDelCírculo(float radio)
+        public float ÁreaDelCírculo()
         {
             return radio * radio;
         }

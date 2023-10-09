@@ -17,7 +17,7 @@ namespace Trabajo7
             this.Base = b;
         }
 
-       public float ÁreaDelRectángulo(int altura, int Base)
+       public float ÁreaDelRectángulo()
         {
              return altura * Base;
         }

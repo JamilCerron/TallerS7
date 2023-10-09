@@ -17,7 +17,7 @@ namespace Trabajo7
             this.altura = altura;
         }
 
-        public float RetornaÁreaTriangular(float Base, float altura)
+        public float RetornaÁreaTriangular()
         {
             return altura*Base/2;
         }
