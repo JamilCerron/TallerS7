@@ -16,47 +16,65 @@ namespace Trabajo7
             float altura;
             float Base;
             float radio;
+            string respuesta;
+            bool continuar = true;
 
-          
-            Console.WriteLine("Elija la figura a operar Círculo/Rectángulo/Triángulo");
-
-            string figura = Console.ReadLine();
-
-            switch (figura)
+            while (continuar)
             {
-                case "Triángulo": Console.WriteLine("Escriba la altura");
-                    altura = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Escriba la base");
+                Console.WriteLine("Elija la figura a operar Círculo/Rectángulo/Triángulo");
 
-                    Base= int.Parse(Console.ReadLine());    
+                string figura = Console.ReadLine();
 
-                    triángulo=new Triángulo(altura,Base);
+                switch (figura)
+                {
+                    case "Triángulo":
+                        Console.WriteLine("Escriba la altura");
+                        altura = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Escriba la base");
 
-                    Console.WriteLine(triángulo.RetornaÁreaTriangular());
-                    break;
+                        Base = int.Parse(Console.ReadLine());
 
-                case "Círculo":
-                   
-                    Console.WriteLine("Escriba la altura");
-                    radio= int.Parse(Console.ReadLine());   
+                        triángulo = new Triángulo(altura, Base);
 
-                    círculo = new Círculo(radio);
+                        Console.WriteLine("El área es " + triángulo.RetornaÁreaTriangular());
+                        Console.WriteLine("¿Desea escoger otra figura Sí/No?");
+                        respuesta = Console.ReadLine();
+                        if (respuesta == "No") continuar=false;
+                            
+                        break;
 
-                    Console.WriteLine(círculo.ÁreaDelCírculo());
-                    break;
+                    case "Círculo":
 
-                case "Rectángulo":
-                    Console.WriteLine("Escriba la altura");
-                    altura = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Escriba la base");
+                        Console.WriteLine("Escriba la altura");
+                        radio = int.Parse(Console.ReadLine());
 
-                    Base = int.Parse(Console.ReadLine());
+                        círculo = new Círculo(radio);
 
-                    rectángulo = new Rectángulo(altura, Base);
+                        Console.WriteLine("El área es " + círculo.ÁreaDelCírculo());
+                        Console.WriteLine("¿Desea escoger otra figura Sí/No?");
+                        respuesta = Console.ReadLine();
+                        if (respuesta == "No") continuar = false;
 
-                    Console.WriteLine(rectángulo.ÁreaDelRectángulo());
-                    break;
+                        break;
+
+                    case "Rectángulo":
+                        Console.WriteLine("Escriba la altura");
+                        altura = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Escriba la base");
+
+                        Base = int.Parse(Console.ReadLine());
+
+                        rectángulo = new Rectángulo(altura, Base);
+
+                        Console.WriteLine("El área es " + rectángulo.ÁreaDelRectángulo());
+                        Console.WriteLine("¿Desea escoger otra figura Sí/No?");
+                        respuesta = Console.ReadLine();
+                        if (respuesta == "No") continuar = false;
+
+                        break;
+                }
             }
+           
         }
     }
 }
